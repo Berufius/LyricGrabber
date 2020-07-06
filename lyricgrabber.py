@@ -30,7 +30,8 @@ def main():
                 # print summary
                 song = genius.search_song(title=track_name, artist=artist)
                 # Check if genius return values correspond with spotipy
-                if str(song.artist).lower() == artist.lower() and str(song.title).lower() == track_name.lower():
+                if (song != None and str(song.artist).lower() == artist.lower()
+                    and str(song.title).lower() == track_name.lower()):
                     print(f"\nArtist: {artist}")
                     print(f"Album: {album}")
                     print(f"Track name: {track_name}\n")
